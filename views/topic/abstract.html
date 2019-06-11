@@ -6,16 +6,6 @@
             />
   </a>
 
-  <span class="reply_count pull-left">
-    <span class="count_of_replies" title="回复数">
-      <%= topic.reply_count %>
-    </span>
-    <span class="count_seperator">/</span>
-    <span class="count_of_visits" title='点击数'>
-      <%= topic.visit_count %>
-    </span>
-  </span>
-
   <% if (topic.reply && topic.reply.author) {%>
   <a class='last_time pull-right' href="/topic/<%= topic._id %><%- '#' + topic.reply._id %>">
     <img class="user_small_avatar" src="<%= proxy(topic.reply.author.avatar_url) %>">
@@ -35,5 +25,15 @@
     <a class='topic_title' href='/topic/<%= topic._id %>' title='<%= topic.title %>'>
       <%= topic.title %>
     </a>
+  </div>
+  <div class="reply_count pull-left">
+    <a href="/user/<%= topic.author.loginname %>"><%= topic.author.loginname %></a>
+    <span class="count_of_replies" title="回复数">
+      <%= topic.reply_count %>
+    </span>
+    <span class="count_seperator">/</span>
+    <span class="count_of_visits" title='点击数'>
+      <%= topic.visit_count %>
+    </span>
   </div>
 </div>
