@@ -3,9 +3,14 @@
 @node_green: #80bd01;
 @node_black: #444444;
 
+/* 色彩配置 */
+/* -- 蓝色主题 -- */
+@primary: #1389FD;
+@body_color: rgba(130,159,177, 0.16);
+
 /* base */
 body {
-  background-color: @gray1;
+  background-color: @body_color;
   font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti, sans-serif !important;
 }
 
@@ -802,7 +807,7 @@ textarea#title {
   z-index: 9;
   width: 100%;
   position: relative;
-  background: @node_black;
+  background: #fff;
   font-size: 13px;
 }
 
@@ -813,7 +818,7 @@ textarea#title {
   box-shadow: none;
   width: 90%;
   margin: auto;
-  padding: 5px;
+  padding: 10px 5px;
 }
 
 .navbar .container {
@@ -825,16 +830,16 @@ textarea#title {
 
 .navbar .brand {
   padding: 4px 0px 0px 20px;
-  width: 120px;
-  padding: 3px 20px;
-  height: 34px;
-  line-height: 34px;
+  padding: 0 20px;
+  height: 40px;
+  line-height: 40px;
   text-shadow: none;
   color: #cccccc;
   font-weight: 700;
 
   img {
-    vertical-align: initial;   
+    height: 100%;
+    vertical-align: initial;
   }
 }
 
@@ -845,11 +850,13 @@ textarea#title {
 .navbar .search-query {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
-  background: #888 url('../images/search.png') no-repeat 4px 4px;
+  background: #f6f6f6 url('../images/search.png') no-repeat 4px 4px;
   padding: 3px 5px 3px 22px;
   color: #666;
   border: 0px;
   margin-top: 2px;
+  outline: none;
+  border: 1px solid transparent;
 
   &:hover {
     background-color: white;
@@ -858,6 +865,8 @@ textarea#title {
 
   &:focus, &.focused {
     background-color: white;
+    box-shadow: none;
+    border: 1px solid #e1e1e1;
   }
 }
 
@@ -868,9 +877,9 @@ textarea#title {
 
 .navbar .nav > li > a {
   text-shadow: none;
-  color: #cccccc;
+  color: @primary;
   &:hover {
-    color: #fff;
+    color: #ccc;
   }
 }
 
@@ -1147,9 +1156,9 @@ textarea.editor {
 
 .topic-tab {
   margin: 0 10px;
-  color: @node_green;
+  color: @primary;
   &.current-tab {
-    background-color: @node_green;
+    background-color: @primary;
     color: white;
     padding: 3px 4px;
     border-radius: 3px;

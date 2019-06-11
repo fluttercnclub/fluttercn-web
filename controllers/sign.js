@@ -54,6 +54,7 @@ exports.signup = function (req, res, next) {
     if (err) {
       return next(err);
     }
+    console.log(users)
     if (users.length > 0) {
       ep.emit('prop_err', '用户名或邮箱已被使用。');
       return;
