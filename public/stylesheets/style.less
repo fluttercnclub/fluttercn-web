@@ -196,8 +196,9 @@ a.light:hover {
 
 .panel .header {
   padding: 15px;
-  background-color: @gray2;
+  background-color: #fff;
   border-radius: 3px 3px 0 0;
+  border-bottom: 1px solid #f0f0f0;
 
   &.topic_header {
     background-color: white;
@@ -351,6 +352,9 @@ a.last_time {
 }
 
 .messages_count {
+  position: relative;
+  top: -1px;
+  margin-right: 0.1em;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   -o-border-radius: 8px;
@@ -359,7 +363,7 @@ a.last_time {
   padding: 1px 4px;
   background-color: @danger;
   color: white;
-  margin-right: 0.3em;
+  font-size: 12px;
 }
 
 .edit_tag {
@@ -836,6 +840,7 @@ textarea#title {
 }
 
 .navbar .brand {
+  margin-left: 0;
   padding: 4px 30px 4px 0;
   height: 32px;
   line-height: 32px;
@@ -882,10 +887,27 @@ textarea#title {
 }
 
 .navbar .nav > li > a {
+  padding: 10px;
   text-shadow: none;
   color: @node_black;
   &:hover {
     color: @primary;
+  }
+}
+
+.regist-guide{
+  margin: 15px auto;
+  .container{
+    width: 100%;
+    min-width: 960px;
+    margin: 0px auto;
+    max-width: 1100px;
+    padding: 15px;
+    background-color: @gray1;
+    box-sizing: border-box;
+    background-image: url('../images/banner.jpg');
+    background-position: 0;
+    color: #fff;
   }
 }
 

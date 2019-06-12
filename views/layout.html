@@ -117,6 +117,18 @@
     </div>
   </div>
 </div>
+
+<!-- 注册登录指引 -->
+<% if (!current_user) { %>
+  <section class="regist-guide">
+    <div class="container">
+      <h1><%- config.name %></h1>
+      <p><%- config.description %></p>
+      <p>加入 FlutterCN，分享知识与经验，提问或解答</p>
+    </div>
+  </section>
+<% } %>
+
 <div id='main'>
   <%- body %>
 </div>
