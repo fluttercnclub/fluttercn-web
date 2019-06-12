@@ -1,12 +1,14 @@
 @gray1: #e1e1e1;
 @gray2: #f6f6f6;
 @node_green: #80bd01;
-@node_black: #444444;
+@node_black: #666;
 
 /* 色彩配置 */
 /* -- 蓝色主题 -- */
 @primary: #1389FD;
-@body_color: rgba(130,159,177, 0.16);
+@success: #67C23A;
+@danger: #F13737;
+@body_color: #f0f2f5;
 
 /* base */
 body {
@@ -15,8 +17,7 @@ body {
 }
 
 #main {
-  width: 90%;
-  max-width: 1400px;
+  max-width: 1100px;
   min-width: 960px;
   margin: 15px auto;
   min-height: 400px;
@@ -111,8 +112,7 @@ body {
 }
 
 #footer_main {
-  width: 90%;
-  max-width: 1400px;
+  max-width: 1100px;
   min-width: 960px;
   margin: 0px auto;
   color: #e2e2e2;
@@ -356,10 +356,10 @@ a.last_time {
   -o-border-radius: 8px;
   border-radius: 8px;
 
-  padding: 1px 5px;
-  background-color: @node_green;
+  padding: 1px 4px;
+  background-color: @danger;
   color: white;
-  margin-right: 0.5em;
+  margin-right: 0.3em;
 }
 
 .edit_tag {
@@ -815,7 +815,8 @@ textarea#title {
   width: 100%;
   position: relative;
   background: #fff;
-  font-size: 13px;
+  font-size: 14px;
+  box-shadow: 0 1px 3px rgba(26,26,26,.1)
 }
 
 .navbar-inner {
@@ -823,23 +824,21 @@ textarea#title {
   border-radius: 0px;
   border: none;
   box-shadow: none;
-  width: 90%;
   margin: auto;
-  padding: 10px 5px;
+  padding: 12px 5px;
 }
 
 .navbar .container {
   width: 100%;
   min-width: 960px;
   margin: 0px auto;
-  max-width: 1400px;
+  max-width: 1100px;
 }
 
 .navbar .brand {
-  padding: 4px 0px 0px 20px;
-  padding: 0 20px;
-  height: 40px;
-  line-height: 40px;
+  padding: 4px 30px 4px 0;
+  height: 32px;
+  line-height: 32px;
   text-shadow: none;
   color: #cccccc;
   font-weight: 700;
@@ -851,19 +850,20 @@ textarea#title {
 }
 
 .navbar .navbar-search {
-  margin-top: 6px;
+  margin-top: 0;
 }
 
 .navbar .search-query {
+  margin-top: 4px;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
-  background: #f6f6f6 url('../images/search.png') no-repeat 4px 4px;
-  padding: 3px 5px 3px 22px;
+  padding: 0px 5px 0px 15px;
+  height: 30px;
+  line-height: 30px;
   color: #666;
-  border: 0px;
-  margin-top: 2px;
   outline: none;
-  border: 1px solid transparent;
+  border: 1px solid #e1e1e1;
+  border-radius: 3px;
 
   &:hover {
     background-color: white;
@@ -873,7 +873,6 @@ textarea#title {
   &:focus, &.focused {
     background-color: white;
     box-shadow: none;
-    border: 1px solid #e1e1e1;
   }
 }
 
@@ -884,9 +883,9 @@ textarea#title {
 
 .navbar .nav > li > a {
   text-shadow: none;
-  color: @primary;
+  color: @node_black;
   &:hover {
-    color: #ccc;
+    color: @primary;
   }
 }
 
