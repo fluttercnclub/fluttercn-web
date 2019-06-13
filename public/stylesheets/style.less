@@ -8,6 +8,7 @@
 @primary: #1389FD;
 @success: #67C23A;
 @danger: #F13737;
+@info: #909399;
 @body_color: #f0f2f5;
 
 /* base */
@@ -1011,6 +1012,14 @@ div[class$=content] > blockquote > p {
 }
 
 /* about score on sidebar */
+.nologin{
+  text-align: center;
+  img{
+    display: block;
+    width: 70%;
+    margin: 15px auto;
+  }
+}
 .top_score {
   color: gray;
   padding: 2px;
@@ -1152,9 +1161,9 @@ textarea.editor {
   .span-common();
 
   color: white;
-  background-color: @primary;
+  background-color: @success;
   &:hover {
-    background-color: #167ce0;
+    background-color: #67C23A;
   }
 }
 
@@ -1162,18 +1171,18 @@ textarea.editor {
   .span-common();
 
   color: white;
-  background-color: #08c;
+  background-color: @primary;
   &:hover {
-    background-color: #05c;
+    background-color: #167ce0;
   }
 }
 
 .span-info {
   .span-common();
   color: white;
-  background-color: #5bc0de;
+  background-color: @info;
   &:hover {
-    background-color: #2f96b4;
+    background-color: #C0C4CC;
   }
 }
 
