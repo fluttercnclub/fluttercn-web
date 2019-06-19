@@ -4,7 +4,7 @@ var config        = require('../config');
 var util          = require('util');
 var logger = require('./logger');
 var transporter     = mailer.createTransport(smtpTransport(config.mail_opts));
-var SITE_ROOT_URL = 'http://' + config.host;
+var SITE_ROOT_URL = config.host.indexOf('http') > -1 ? config.host : 'http://' + config.host;
 var async = require('async')
 
 /**
