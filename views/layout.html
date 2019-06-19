@@ -4,7 +4,7 @@
   <!-- meta -->
   <meta charset="utf-8"/>
   <meta name='description' content='<%= config.description %>'>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width"/>
   <meta name="keywords" content="<%= config.keywords %>"/>
   <!-- see http://smerity.com/articles/2013/where_did_all_the_http_referrers_go.html -->
   <meta name="referrer" content="always">
@@ -121,8 +121,8 @@
 <% if (!current_user) { %>
   <section class="regist-guide">
     <div class="container">
-      <h2><%- config.description %></h2>
-      <h3>终于上线！</h3>
+      <h3><%- config.description %></h3>
+      <h3 style="top: -7px">终于上线！</h3>
       <h5>快来加入 FlutterCN</h5>
       <h5>和好友们一起分享知识交流经验吧～</h5>
       <!-- <div>

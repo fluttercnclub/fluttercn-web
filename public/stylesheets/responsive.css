@@ -36,12 +36,17 @@
 @media (max-width: 979px) {
 
   .navbar {
-      margin: 0 5px;
+      margin: 0;
       z-index: 999;
       width: auto !important;
   }
 
+  .regist-guide{
+      margin: 0;
+  }
+
   .navbar .container, #main,
+  .regist-guide .container,
   #content, #footer_main {
       width: 100%;
       min-width: 0;
@@ -58,7 +63,7 @@
 
   #main {
       /*overflow: hidden;*/
-      margin: 20px auto;
+      margin: 15px auto;
       min-height: 0;
   }
 
