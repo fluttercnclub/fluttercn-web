@@ -106,6 +106,7 @@ router.get('/faq', staticController.faq);
 router.get('/getstart', staticController.getstart);
 router.get('/robots.txt', staticController.robots);
 router.get('/api', staticController.api);
+router.get('/guidelines', staticController.guidelines);
 
 //rss
 router.get('/rss', rss.index);

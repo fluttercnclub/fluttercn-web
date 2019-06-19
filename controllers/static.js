@@ -7,6 +7,13 @@ exports.about = function (req, res, next) {
   });
 };
 
+// 社区指南
+exports.guidelines = function (req, res, next) {
+  res.render('static/guidelines', {
+    pageTitle: '社区指南'
+  });
+};
+
 // FAQ
 exports.faq = function (req, res, next) {
   res.render('static/faq');
