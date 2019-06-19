@@ -121,10 +121,11 @@
 <% if (!current_user) { %>
   <section class="regist-guide">
     <div class="container">
-      <h1><%- config.name %></h1>
-      <p><%- config.description %></p>
-      <p>加入 FlutterCN，分享知识与经验，提问或解答</p>
-      <div>
+      <h2><%- config.description %></h2>
+      <h3>终于上线！</h3>
+      <h4>快来 <a href="/signin">加入</a> FlutterCN</h4>
+      <h5>和好友们一起分享知识交流经验吧～</h5>
+      <!-- <div>
         您可以
         <a href='/signin'>登录</a>
         或
@@ -135,7 +136,7 @@
             通过 GitHub 登录
           </span>
         </a>
-      </div>
+      </div> -->
     </div>
   </section>
 <% } %>
