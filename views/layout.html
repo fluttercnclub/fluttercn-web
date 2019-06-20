@@ -57,7 +57,7 @@
   <% } else if (typeof(pageTitle) !== 'undefined') { %>
   <title><%= pageTitle %> - <%= config.name %></title>
   <% } else { %>
-  <title><%= config.description %></title>
+  <title><%= config.name %></title>
   <% } %>
   <meta content="_csrf" name="csrf-param">
   <meta content="<%= csrf %>" name="csrf-token">
