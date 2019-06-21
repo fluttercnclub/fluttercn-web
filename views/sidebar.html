@@ -19,7 +19,7 @@
       <%- partial('user/card',{ object: typeof(user) === 'undefined' ? current_user : user, as: 'user' }) %>
     </div>
     <% } else { %>
-    <div class='inner nologin'>
+    <!-- <div class='inner nologin'>
       <img src="<%- staticFile('/public/images/flutterlogo.svg') %>">
       <div>
         您可以
@@ -33,7 +33,7 @@
           </span>
         </a>
       </div>
-    </div>
+    </div> -->
     <% } %>
   </div>
 
@@ -82,26 +82,15 @@
       <span class='col_fade'><i class="fab fa-staylinked"></i>友情社区</span>
     </div>
     <div class='inner'>
-      <p>交换友链请联系<a href="/user/seymoe"> @seymoe </a>吧</p>
-      <!-- <ol class="friendship-community">
+      <!-- <p>交换友链请联系<a href="/user/seymoe"> @seymoe </a>吧</p> -->
+      <ol class="friendship-community">
         <li>
-          <a href="https://ruby-china.org/" target="_blank">
-            <img src="<%- staticFile('/public/images/ruby-china-20150529.png') %>">
+          <a href="https://cnodejs.org/" target="_blank">
+            <img src="<%- staticFile('/public/images/cnode_logo.png') %>">
           </a>
         </li>
-        <div class="sep10"></div>
-        <li>
-          <a href="http://golangtc.com/" target="_blank">
-            <img src="<%- staticFile('/public/images/golangtc-logo.png') %>">
-          </a>
-        </li>
-        <div class="sep10"></div>
-        <li>
-          <a href="http://phphub.org/" target="_blank">
-            <img src="<%- staticFile('/public/images/phphub-logo.png') %>">
-          </a>
-        </li>
-      </ol> -->
+        <!-- <div class="sep10"></div> -->
+      </ol>
     </div>
   </div>
   <div class='panel'>

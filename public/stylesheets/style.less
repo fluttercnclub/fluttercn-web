@@ -274,16 +274,18 @@ a.light:hover {
 }
 
 .cell .count_of_replies {
+  margin-left: 15px;
   color: rgb(158, 120, 192);
+  font-size: 18px;
 }
 
 .cell .count_seperator {
   margin: 0 -3px;
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .cell .count_of_visits {
-  font-size: 10px;
+  font-size: 14px;
   color: rgb(180, 180, 180);
 }
 
@@ -901,13 +903,23 @@ textarea#title {
     background-image: url('../images/banner.jpg');
     background-position: 0;
     color: #fff;
+    text-align: center;
     background-size: cover;
-    h2,h3,h4,h5{
+    h3,h5{
       margin: 0;
       font-weight: normal;
     }
     h3{
       position: relative;
+    }
+    .btns {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      span{
+        margin: 0 15px;
+      }
     }
   }
 }
@@ -1016,8 +1028,11 @@ div[class$=content] > blockquote > p {
   text-align: center;
   img{
     display: block;
-    width: 70%;
-    margin: 15px auto;
+    width: 60%;
+    margin: 15px auto 15px auto;
+  }
+  >div{
+    margin-bottom: 15px;
   }
 }
 .top_score {
@@ -1323,6 +1338,7 @@ textarea.editor {
 }
 
 .friendship-community {
+  text-align: center;
   img {
     width: 150px;
   }
