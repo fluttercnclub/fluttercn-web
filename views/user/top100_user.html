@@ -6,8 +6,12 @@
     </a>
     <span class='sp10'></span>
     <a href='/user/<%= user.loginname %>'>
-      <b style="display: block;"><%= user.name %></b>
-      <i style="display: block"><%= user.loginname %></i>
+      <% if (user.name) { %> 
+        <b style="display: block;"><%= user.name %></b>
+        <i style="display: block"><%= user.loginname %></i>
+      <% } else { %>
+        <b style="display: block;"><%= user.loginname %></b>
+      <% } %>
     </a>
   </td>
   <td><%= user.score %></td>
