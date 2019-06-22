@@ -70,6 +70,7 @@ exports.create = function (req, res, next) {
   var email = profile.emails && profile.emails[0] && profile.emails[0].value;
   if (isnew) { // 注册新账号
     var user = new User({
+      name: profile.username,
       loginname: profile.username,
       pass: profile.accessToken,
       email: email,
@@ -82,6 +83,7 @@ exports.create = function (req, res, next) {
     });
     user.save(function (err) {
       if (err) {
+        console.log('注册时出错 -》 ', err)
         // 根据 err.err 的错误信息决定如何回应用户，这个地方写得很难看
         if (err.message.indexOf('duplicate key error') !== -1) {
           if (err.message.indexOf('email') !== -1) {
@@ -90,7 +92,7 @@ exports.create = function (req, res, next) {
           }
           if (err.message.indexOf('loginname') !== -1) {
             return res.status(500)
-              .send('您 GitHub 账号的用户名与之前在 CNodejs 注册的用户名重复了');
+              .send('您 GitHub 账号的用户名与之前在 FlutterCN 注册的用户名重复了');
           }
         }
         return next(err);

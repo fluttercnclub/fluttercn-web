@@ -14,7 +14,10 @@ exports.showSignup = function (req, res) {
 };
 
 exports.signup = function (req, res, next) {
+  console.log(req.body)
+  
   var loginname = validator.trim(req.body.loginname).toLowerCase();
+  var name = validator.trim(req.body.name);
   var email     = validator.trim(req.body.email).toLowerCase();
   var pass      = validator.trim(req.body.pass);
   var rePass    = validator.trim(req.body.re_pass);
@@ -27,7 +30,7 @@ exports.signup = function (req, res, next) {
   });
 
   // 验证信息的正确性
-  if ([loginname, pass, rePass, email].some(function (item) { return item === ''; })) {
+  if ([loginname, pass, rePass, email, name].some(function (item) { return item === ''; })) {
     ep.emit('prop_err', '信息不完整。');
     return;
   }
@@ -41,11 +44,18 @@ exports.signup = function (req, res, next) {
   if (!validator.isEmail(email)) {
     return ep.emit('prop_err', '邮箱不合法。');
   }
+  if (name.length <= 0) {
+    ep.emit('prop_err', '请输入昵称');
+    return;
+  }
+  if (name.length > 20) {
+    ep.emit('prop_err', '昵称长度不能超过20个字符。');
+    return;
+  }
   if (pass !== rePass) {
     return ep.emit('prop_err', '两次密码输入不一致。');
   }
   // END 验证信息的正确性
-
 
   User.getUsersByQuery({'$or': [
     {'loginname': loginname},
@@ -54,7 +64,6 @@ exports.signup = function (req, res, next) {
     if (err) {
       return next(err);
     }
-    console.log(users)
     if (users.length > 0) {
       ep.emit('prop_err', '用户名或邮箱已被使用。');
       return;
@@ -63,7 +72,7 @@ exports.signup = function (req, res, next) {
     tools.bhash(pass, ep.done(function (passhash) {
       // create gravatar
       var avatarUrl = User.makeGravatar(email);
-      User.newAndSave(loginname, loginname, passhash, email, avatarUrl, false, function (err) {
+      User.newAndSave(name, loginname, passhash, email, avatarUrl, false, function (err) {
         if (err) {
           return next(err);
         }

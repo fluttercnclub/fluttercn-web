@@ -26,9 +26,31 @@
 
           <div class='controls'>
             <% if (typeof(loginname) !== 'undefined') { %>
-            <input class='input-xlarge' id='loginname' name='loginname' size='30' type='text' value='<%= loginname %>'/>
+            <input placeholder="大小写字母数字、-、_，长度不小于5" class='input-xlarge' id='loginname' name='loginname' size='30' type='text' value='<%= loginname %>'/>
             <% } else { %>
-            <input class='input-xlarge' id='loginname' name='loginname' size='30' type='text' value=''/>
+            <input placeholder="大小写字母数字、-、_，长度不小于5" class='input-xlarge' id='loginname' name='loginname' size='30' type='text' value=''/>
+            <% } %>
+          </div>
+        </div>
+        <div class='control-group'>
+          <label class='control-label' for='email'>邮箱</label>
+
+          <div class='controls'>
+            <% if (typeof(email) !== 'undefined') { %>
+            <input placeholder="请输入真实邮箱地址" class='input-xlarge' id='email' name='email' size='30' type='text' value='<%= email %>'/>
+            <% } else { %>
+            <input placeholder="请输入真实邮箱地址" class='input-xlarge' id='email' name='email' size='30' type='text'/>
+            <% } %>
+          </div>
+        </div>
+        <div class='control-group'>
+          <label class='control-label' for='loginname'>昵称</label>
+
+          <div class='controls'>
+            <% if (typeof(name) !== 'undefined') { %>
+            <input placeholder="请输入昵称" class='input-xlarge' id='name' name='name' size='20' type='text' value='<%= name %>'/>
+            <% } else { %>
+            <input placeholder="请输入昵称" class='input-xlarge' id='name' name='name' size='20' type='text' value=''/>
             <% } %>
           </div>
         </div>
@@ -36,36 +58,30 @@
           <label class='control-label' for='pass'>密码</label>
 
           <div class='controls'>
-            <input class='input-xlarge' id='pass' name='pass' size='30' type='password'/>
+            <input placeholder="请输入密码" class='input-xlarge' id='pass' name='pass' size='30' type='password'/>
           </div>
         </div>
         <div class='control-group'>
           <label class='control-label' for='re_pass'>确认密码</label>
 
           <div class='controls'>
-            <input class='input-xlarge' id='re_pass' name='re_pass' size='30' type='password'/>
-          </div>
-        </div>
-        <div class='control-group'>
-          <label class='control-label' for='email'>电子邮箱</label>
-
-          <div class='controls'>
-            <% if (typeof(email) !== 'undefined') { %>
-            <input class='input-xlarge' id='email' name='email' size='30' type='text' value='<%= email %>'/>
-            <% } else { %>
-            <input class='input-xlarge' id='email' name='email' size='30' type='text'/>
-            <% } %>
+            <input placeholder="再次确认密码" class='input-xlarge' id='re_pass' name='re_pass' size='30' type='password'/>
           </div>
         </div>
         <input type='hidden' name='_csrf' value='<%= csrf %>'/>
 
         <div class='form-actions'>
           <input type='submit' class='span-primary' value='注册'/>
-          <a href="/auth/github">
-            <span class="span-info">
-              通过 GitHub 登录
+          <!-- <a href="/auth/github">
+            <span class="span-primary">
+              GitHub登录
             </span>
-          </a>
+          </a> -->
+        </div>
+        <div class="normal-signup-tip">
+          <div class="alert alert-info">
+            <b>⚠️ 如果提示邮件发送成功却没收到邮件，请再试一次。如果仍然无法收到请联系 <a href="/user/seymoe">社区管理员</a>，或者选择 <a href="/auth/github">Github登录</a>。</b>
+          </div>
         </div>
       </form>
       <% } %>

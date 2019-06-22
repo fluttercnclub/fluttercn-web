@@ -271,6 +271,9 @@ a.light:hover {
 .cell .reply_count {
   display: inline-block;
   text-align: center;
+  a{
+    color: #999;
+  }
 }
 
 .cell .count_of_replies {
@@ -471,6 +474,7 @@ a.tag_big {
 }
 
 .user_avatar img, .user_big_avatar img {
+  margin-right: 15px;
   width: 50px;
   height: 50px;
   border-radius: 8px;
@@ -491,6 +495,16 @@ a.user_avatar:hover {
 
 .user_card .user_name {
   font-size: 16px;
+  b,i{
+    display: block;
+  }
+  b{
+    color: #666;
+  }
+  i{
+    position: relative;
+    top: -4px;
+  }
 }
 
 .cell .user_avatar {
@@ -498,13 +512,26 @@ a.user_avatar:hover {
 }
 
 .user_big_avatar {
-  float: left;
-  margin-right: 10px;
-}
-
-.user_big_avatar img {
-  width: 40px;
-  height: 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  img{
+    margin-right: 15px;
+    width: 50px;
+    height: 50px;
+  }
+  h4{
+    margin: 0;
+  }
+  .btnwrap{
+    flex: 1;
+    text-align: right;
+    a.btn-setting{
+      color: #fff;
+      border-radius: 25px;
+      text-decoration: none;
+    }
+  }
 }
 
 .fa {
@@ -577,14 +604,20 @@ a.user_avatar:hover {
   top: -5px;
 }
 
-.author_content .user_avatar {
-  display: inline-block;
-  float: left;
-}
-
 .user_info {
   margin-left: 10px;
   display: inline-block;
+}
+
+.author_content .user_avatar {
+  display: inline-block;
+  margin-right: 0px;
+  float: left;
+}
+.author_content {
+  .user_info{
+    margin-left: 0px;
+  }
 }
 
 .user_action {
@@ -647,6 +680,7 @@ a.topic_title {
   vertical-align: middle;
   font-size: 18px;
   line-height: 30px;
+  color: #666;
 }
 
 #topic_list a.topic_title {

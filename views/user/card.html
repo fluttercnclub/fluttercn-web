@@ -1,9 +1,16 @@
 <div class='user_card'>
   <div>
     <a class='user_avatar' href="/user/<%= user.loginname %>">
-      <img src="<%= proxy(user.avatar_url) %>" title="<%= user.loginname %>"/>
+      <img src="<%= proxy(user.avatar_url) %>" title="<%= user.name %>"/>
+      <span class='user_name'>
+        <% if (user.name) { %>
+          <b class='dark'><%= user.name %></b>
+          <i><%= user.loginname %></i>
+        <% } else { %> 
+          <b class='dark'><%= user.loginname %></b>
+        <% } %>
+      </span>
     </a>
-    <span class='user_name'><a class='dark' href="/user/<%= user.loginname %>"><%= user.loginname %></a></span>
 
     <div class='board clearfix'>
       <div class='floor'>

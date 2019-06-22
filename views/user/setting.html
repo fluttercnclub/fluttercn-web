@@ -22,10 +22,18 @@
       <% } %>
       <form id='setting_form' class='form-horizontal' action='/setting' method='post'>
         <div class='control-group'>
-          <label class='control-label' for='name'>用户名</label>
+          <label class='control-label' for='name'>昵称</label>
 
           <div class='controls'>
-            <input class='input-xlarge readonly' id='name' name='name' size='30' type='text' readonly='true'
+            <input placeholder="请输入昵称" class='input-xlarge readonly' id='name' name='name' size='20' type='text'
+              value="<%= name || '' %>"/>
+          </div>
+        </div>
+        <div class='control-group'>
+          <label class='control-label' for='loginname'>用户名</label>
+
+          <div class='controls'>
+            <input disabled class='input-xlarge readonly' id='loginname' name='loginname' size='30' type='text' readonly='true'
                    value="<%= loginname %>"/>
           </div>
         </div>
@@ -33,24 +41,33 @@
           <label class='control-label' for='email'>电子邮件</label>
 
           <div class='controls'>
-            <input class='input-xlarge readonly' id='email' name='email' size='30' type='text'
+            <input disabled class='input-xlarge readonly' id='email' name='email' size='30' type='text'
                    readonly='true' value="<%= email %>"/>
 
             <p>同时决定了 Gravatar 头像</p>
           </div>
         </div>
         <div class='control-group'>
+          <label class='control-label' for='github'>GitHub</label>
+
+          <div class='controls'>
+            <input disabled class='input-xlarge' id='github' name='github' size='30' type='text'
+                    value="<%= typeof(githubUsername) !== 'undefined' ? '@' + githubUsername : '' %>" placeholder="@username" readonly="readonly" />
+            <p>请通过 GitHub 登陆 FlutterCN 来修改此处</p>
+          </div>
+        </div>
+        <div class='control-group'>
           <label class='control-label' for='url'>个人网站</label>
 
           <div class='controls'>
-            <input class='input-xlarge' id='url' name='url' size='30' type='text' value="<%= typeof(url) !== 'undefined' ? url : '' %>"/>
+            <input placeholder="个人网站地址" class='input-xlarge' id='url' name='url' type='text' value="<%= typeof(url) !== 'undefined' ? url : '' %>"/>
           </div>
         </div>
         <div class='control-group'>
           <label class='control-label' for='location'>所在地点</label>
 
           <div class='controls'>
-            <input class='input-xlarge' id='location' name='location' size='30' type='text'
+            <input placeholder="省份城市等..." class='input-xlarge' id='location' name='location' size='30' type='text'
                    value="<%= typeof(location) !== 'undefined' ? location : '' %>"/>
           </div>
         </div>
@@ -60,23 +77,14 @@
 
           <div class='controls'>
             <input class='input-xlarge' id='weibo' name='weibo' size='30' type='text' value="<%= typeof(weibo) !== 'undefined' ? weibo : '' %>"
-                   placeholder="e.g. http://weibo.com/fluttercn"/>
-          </div>
-        </div>
-        <div class='control-group'>
-          <label class='control-label' for='github'>GitHub</label>
-
-          <div class='controls'>
-            <input class='input-xlarge' id='github' name='github' size='30' type='text'
-                   value="<%= typeof(githubUsername) !== 'undefined' ? '@' + githubUsername : '' %>" placeholder="@username" readonly="readonly" />
-            <p>请通过 GitHub 登陆 FlutterCN 来修改此处</p>
+                   placeholder="请输入微博主页网址"/>
           </div>
         </div>
         <div class='control-group'>
           <label class='control-label' for='signature'>个性签名</label>
 
           <div class='controls'>
-            <textarea class='input-xlarge' id='signature' name='signature' size='30'><%= typeof(signature) !== 'undefined' ? signature : "" %></textarea>
+            <textarea placeholder="说点儿什么..." class='input-xlarge' id='signature' name='signature' size='30'><%= typeof(signature) !== 'undefined' ? signature : "" %></textarea>
           </div>
         </div>
         <input type='hidden' id='action' name='action' value='change_setting'/>

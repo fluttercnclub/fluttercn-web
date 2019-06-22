@@ -24,26 +24,26 @@
       <form id='signin_form' class='form-horizontal' action=<%= actionPath
       %> method='post'>
       <div class='control-group'>
-        <label class='controls'>或者</label>
+        <label class='controls'>或者关联旧账号</label>
       </div>
       <div class='control-group'>
         <label class='control-label' for='name'>用户名</label>
 
         <div class='controls'>
-          <input class='input-xlarge' id='name' name='name' size='30' type='text'/>
+          <input placeholder="请输入用户名" class='input-xlarge' id='name' name='name' size='30' type='text'/>
         </div>
       </div>
       <div class='control-group'>
         <label class='control-label' for='pass'>密码</label>
 
         <div class='controls'>
-          <input class='input-xlarge' id='pass' name='pass' size='30' type='password'/>
+          <input placeholder="请输入密码" class='input-xlarge' id='pass' name='pass' size='30' type='password'/>
         </div>
       </div>
       <input type='hidden' name='_csrf' value='<%= csrf %>'/>
 
       <div class='form-actions'>
-        <input type='submit' class='span-primary' value='关联旧账号'/>
+        <input type='submit' class='span-success' value='关联旧账号'/>
       </div>
       </form>
     </div>

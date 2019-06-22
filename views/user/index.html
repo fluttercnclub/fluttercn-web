@@ -10,8 +10,18 @@
     <div class='inner userinfo'>
       <div class='user_big_avatar'>
         <img src="<%= proxy(user.avatar_url) %>" class="user_avatar" title="<%= user.loginname %>"/>
+        <div>
+          <% if (user.name) { %>
+            <h4><%= user.name %></h4>
+          <% } %>
+          <a class='dark'><%= user.loginname %></a>
+        </div>
+        <!-- <% if (current_user) { %>
+          <div class="btnwrap">
+            <a href="/setting" class="btn-setting span-primary">设置</a>
+          </div>
+        <% } %> -->
       </div>
-      <a class='dark'><%= user.loginname %></a>
 
       <div class='user_profile'>
         <ul class='unstyled'>
