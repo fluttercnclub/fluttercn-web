@@ -21,7 +21,7 @@ describe('test/controllers/static.test.js', function () {
   it('should get /getstart', function (done) {
     request.get('/getstart').expect(200)
     .end(function (err, res) {
-      res.text.should.containEql('Node.js 新手入门');
+      res.text.should.containEql('中文资源');
       done(err);
     });
   });

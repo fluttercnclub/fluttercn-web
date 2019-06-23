@@ -21,7 +21,7 @@ exports.faq = function (req, res, next) {
 
 exports.getstart = function (req, res) {
   res.render('static/getstart', {
-    pageTitle: 'Flutter 新手入门'
+    pageTitle: '中文资源'
   });
 };
 
