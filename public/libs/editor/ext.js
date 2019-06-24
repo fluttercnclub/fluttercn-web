@@ -109,7 +109,7 @@
                     '<button class="btn btn-primary" role="save">确定</button>',
                 '</div>',
             '</div>'
-        ].join('')).appendTo($body);
+        ].join('')).appendTo($('.markdown_editor')[0]);
 
         this.$win.on('click', '[role=save]', function(){
             self.$win.find('form').submit();
@@ -153,7 +153,7 @@
                     '</div>',
                 '</div>',
             '</div>'
-        ].join('')).appendTo($body);
+        ].join('')).appendTo($('.markdown_editor')[0]);
 
         this.$upload = this.$win.find('.upload-img').css({
             height: 50,
@@ -209,9 +209,7 @@
                 var cm = self.editor.codemirror;
                 var stat = getState(cm);
                 _replaceSelection(cm, stat.image, '!['+ file.name +']('+ res.url +')');
-
-            }
-            else{
+            } else {
                 self.removeFile();
                 self.showError(res.msg || '服务器走神了，上传失败');
             }
