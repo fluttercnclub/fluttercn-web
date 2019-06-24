@@ -6811,7 +6811,8 @@ function getState(cm, pos) {
  * Toggle full screen of the editor.
  */
 function toggleFullScreen(editor) {
-  var el = editor.codemirror.getWrapperElement();
+  // var el = editor.codemirror.getWrapperElement();
+  var el = document.getElementsByClassName('markdown_editor')[0]
 
   // https://developer.mozilla.org/en-US/docs/DOM/Using_fullscreen_mode
   var doc = document;
