@@ -62,6 +62,14 @@
   <% } %>
   <meta content="_csrf" name="csrf-param">
   <meta content="<%= csrf %>" name="csrf-token">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112394921-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-112394921-4');
+  </script>
 </head>
 <body>
 <!-- navbar -->
