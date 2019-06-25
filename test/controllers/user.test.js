@@ -213,7 +213,7 @@ describe('test/controllers/user.test.js', function () {
     it('should get /user/:name/replies ok', function (done) {
       request.get('/user/' + support.normalUser.loginname + '/replies')
       .expect(200, function (err, res) {
-        res.text.should.containEql(support.normalUser.loginname + ' 参与的话题');
+        res.text.should.containEql((support.normalUser.name || support.normalUser.loginname) + ' 参与的话题');
         done(err);
       });
     });
