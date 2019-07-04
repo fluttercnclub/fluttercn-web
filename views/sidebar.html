@@ -41,6 +41,17 @@
     <%- partial('./_ads') %>
   <% } %>
 
+  <!-- 微信群二维码 -->
+  <div class="panel">
+    <div class='header'>
+      <span class='col_fade'>群友在召唤</span>
+    </div>
+    <div class="inner">
+      <img style="display: block;width: 60%;margin: 0 auto;" src="<%= staticFile('/public/images/wx_qrcode.png') %>" alt="">
+      <p style="text-align: center;margin-top: 15px">微信扫码，即刻进群</p>
+    </div>
+  </div>
+
   <% if (typeof(no_reply_topics) !== 'undefined') { %>
   <div class='panel'>
     <div class='header'>
